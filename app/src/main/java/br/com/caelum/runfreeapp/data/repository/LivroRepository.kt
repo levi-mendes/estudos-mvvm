@@ -4,5 +4,5 @@ import br.com.caelum.runfreeapp.data.network.LivroApi
 
 class LivroRepository(private val api: LivroApi) {
 
-    suspend fun busca() = api.buscaLivros().livros
+    suspend fun busca(indice: Int, qtdeLivros: Int) = api.buscaLivros(indice = indice, qtdeLivros = qtdeLivros).livros
 }

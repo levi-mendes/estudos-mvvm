@@ -20,9 +20,9 @@ class LivroViewModel(
 
     fun getLivros() = livrosLiveData as LiveData<List<LivroViewEntity>>
 
-    fun busca() {
+    fun busca(indice: Int, qtdeLivros: Int) {
         CoroutineScope(Dispatchers.IO).launch {
-            val livros = repository.busca()
+            val livros = repository.busca(indice = indice, qtdeLivros = qtdeLivros)
 
             val entities = livros.map { mapper.transform(it) }
 
@@ -33,5 +33,4 @@ class LivroViewModel(
         }
 
     }
-
 }

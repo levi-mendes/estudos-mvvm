@@ -21,12 +21,8 @@ class LivroAdapter(val livros: List<LivroViewEntity>) : Adapter<LivroViewHolder>
     override fun getItemCount(): Int = livros.size
 
     override fun onBindViewHolder(holder: LivroViewHolder, position: Int) {
-
         val livroViewEntity = livros[position]
         holder.binding.livro = livroViewEntity
-
-
-
     }
 
 

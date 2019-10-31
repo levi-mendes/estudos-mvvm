@@ -18,7 +18,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        viewModel.busca()
+        val indice = 0
+        val qtde = 20
+
+        viewModel.busca(indice = indice, qtdeLivros = qtde)
 
         viewModel.getLivros().observe(this, Observer {
 
