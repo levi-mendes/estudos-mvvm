@@ -1,6 +1,7 @@
 package br.com.caelum.runfreeapp.view.activity
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -27,7 +28,10 @@ class MainActivity : AppCompatActivity() {
 
             lista.adapter = LivroAdapter(it)
             lista.layoutManager = LinearLayoutManager(this)
-
         })
+
+        srl_lista_livros.setOnRefreshListener { showToast("Atualizar") }
     }
+
+    private fun  showToast(msg: String) = Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
 }

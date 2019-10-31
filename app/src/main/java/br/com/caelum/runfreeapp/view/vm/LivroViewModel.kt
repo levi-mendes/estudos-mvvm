@@ -15,7 +15,6 @@ class LivroViewModel(
     private val mapper: LivroViewEntityMapper = LivroViewEntityMapper()
 ) : ViewModel() {
 
-
     private val livrosLiveData = MutableLiveData<List<LivroViewEntity>>()
 
     fun getLivros() = livrosLiveData as LiveData<List<LivroViewEntity>>
@@ -29,8 +28,6 @@ class LivroViewModel(
             launch(Dispatchers.Main) {
                 livrosLiveData.postValue(entities)
             }
-
         }
-
     }
 }
